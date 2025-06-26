@@ -24,6 +24,7 @@
         }
         body {
             font-family: 'SeoulNamsanM';
+            text-align : center;
             background-color: #D4D3DD;
             margin: 0;
             padding: 20px;
@@ -45,8 +46,11 @@
         }
 
         label {
+            font-family: 'Pretendard-Regular';
+            color:#859398;
             display: block;
             margin-bottom: 10px;
+            margin : 0 auto;
         }
 
         input, select {
@@ -55,6 +59,7 @@
             color: #EFEFBB;
             margin-top: 5px;
             margin-bottom: 15px;
+            max-width:350px;
             border: 1px solid #0c0c0c;
             font-size: 24px;
         }
@@ -78,29 +83,29 @@
             padding: 15px;
             border-radius: 5px;
             text-align: center;
-            background-color: #e7f3fe;
-            color: #31708f;
+            color: #859398;
         }
 
     </style>
 </head>
 <body>
 <h1>Calculator</h1>
-<form th:action="@{/calculate}" method="post"> <!-- action값은 controller의 mapping과 연결 -->
+<form th:action="@{/calculate}" method="post">
     <label for="num1">Number 1:</label>
-    <input type="number" step="any" id="num1" name="num1"/>
+    <input type="number" step="any" id="num1" name="num1" required/>
 
     <label for="num2">Number 2:</label>
-    <input type="number" step="any" id="num2" name="num2"/> <!-- name은 controller의 param과 연결-->
+    <input type="number" step="any" id="num2" name="num2" required/>
 
     <label for="operation">Operation: </label>
-    <select id="operation" name="operation">
+    <select id="operation" name="operation" style="text-align:center; ">
         <option value="add">Add (+)</option>
         <option value="subtract">Subtract (-)</option>
-        <option value="multiply">Multiply (x)</option>
-        <option value="divide">Devide (÷)</option>
-    </select>                                                                    <!-- id는 label의 for과 연결-->
-    <button type="submit">Calculate</button>
+        <option value="multiply">Multiply (×)</option>
+        <option value="divide">Divide (÷)</option>
+    </select>
+
+    <button type="submit" style="font-family: exqt">Calculate</button>
 </form>
 
 <div th:if="${errorMessage}" class="errorMessage">
