@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>계산기</title>
+</head>
+<body>
+    <h1>계산기입니다.</h1>
+    <form th:action="@{/calculate}" method="post"> <!-- action값은 controller의 mapping과 연결 -->
+        <label for="num1">Number 1:</label>
+        <input type="number" step="any" id="num1" name="num1" />    <!-- name은 controller의 param과 연결-->
+                                                                    <!-- id는 label의 for과 연결-->
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>

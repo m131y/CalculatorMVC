@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
-    public double calculator(double num1, double num2, String operation) {
+    public double calculate(double num1, double num2, String operation) {
         switch (operation) {
             case "add":
                 return num1+num2;
