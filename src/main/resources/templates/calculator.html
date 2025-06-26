@@ -24,23 +24,68 @@
         }
         body {
             font-family: 'SeoulNamsanM';
-            background-color: #e4e4d9;
+            background-color: #D4D3DD;
+            margin: 0;
+            padding: 20px;
         }
-        form {
-            background:#EFEFBB;
-            padding:20px;
-            border-radius:1000px;
-            box-shadow: 0 2px 4px rgba(33,95,0,0.5);
-            max-width:400px;
-            margin : 0 auto;
-        }
+
         h1 {
-            margin : 0 auto;
+            color: #EFEFBB;
+            max-width: 400px;
+            margin: 20px auto;
         }
+
+        form {
+            background: #EFEFBB;
+            padding: 20px;
+            border-radius: 100px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.5);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            background-color:#D4D3DD;
+            color: #EFEFBB;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #0c0c0c;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: #D4D3DD;
+            color:#EFEFBB;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .result {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #e7f3fe;
+            color: #31708f;
+        }
+
     </style>
 </head>
 <body>
-<h1 style="background-color:#215f00">계산기입니다.</h1>
+<h1>Calculator</h1>
 <form th:action="@{/calculate}" method="post"> <!-- action값은 controller의 mapping과 연결 -->
     <label for="num1">Number 1:</label>
     <input type="number" step="any" id="num1" name="num1"/>
