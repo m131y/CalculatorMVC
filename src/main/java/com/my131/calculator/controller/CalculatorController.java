@@ -26,13 +26,14 @@ public class CalculatorController {
     @PostMapping("/calculate") //calculate.html 의 form action과 연결
     public String calculate(
         @RequestParam("num1") double num1,
-//        @RequestParam("num2") double num2,
-//        @RequestParam("operation") String operation,
+        @RequestParam("num2") double num2,
+        @RequestParam("operation") String operation,
         Model model
     ) {
-        System.out.println("clicked!");
+        System.out.println("clicked!"+ num1 + ", " + num2 + ", " + operation);
         try {
-            double result = calculatorService.calculate(num1, 10, "add");
+            double result = calculatorService.calculate(num1, num2, operation);
+            System.out.println(result);
             model.addAttribute("result", result);
         } catch(IllegalArgumentException e) {
             model.addAttribute("errorMessage", e.getMessage());

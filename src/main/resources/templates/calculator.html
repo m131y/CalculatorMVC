@@ -5,12 +5,33 @@
     <title>계산기</title>
 </head>
 <body>
-    <h1>계산기입니다.</h1>
-    <form th:action="@{/calculate}" method="post"> <!-- action값은 controller의 mapping과 연결 -->
-        <label for="num1">Number 1:</label>
-        <input type="number" step="any" id="num1" name="num1" />    <!-- name은 controller의 param과 연결-->
-                                                                    <!-- id는 label의 for과 연결-->
-        <button type="submit">Calculate</button>
-    </form>
+<h1>계산기입니다.</h1>
+<form th:action="@{/calculate}" method="post"> <!-- action값은 controller의 mapping과 연결 -->
+    <label for="num1">Number 1:</label>
+    <input type="number" step="any" id="num1" name="num1"/>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" step="any" id="num2" name="num2"/> <!-- name은 controller의 param과 연결-->
+
+    <label for="operation">Operation: </label>
+    <select id="operation" name="operation">
+        <option value="add">Add (+)</option>
+        <option value="subtract">Subtract (-)</option>
+        <option value="multiply">Multiply (x)</option>
+        <option value="divide">Devide (/)</option>
+    </select>                                                                    <!-- id는 label의 for과 연결-->
+    <button type="submit">Calculate</button>
+</form>
+
+<div th:if="${errorMessage}" class="errorMessage">
+    <script>
+        alert("error, 0으로 나눌 수 없습니다.");
+    </script>
+</div>
+
+<div th:if="${result}" class="result">
+    <h2>Result: <span th:text="${result}"></span> </h2>
+</div>
+
 </body>
 </html>
